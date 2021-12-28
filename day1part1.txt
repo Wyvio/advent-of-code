@@ -1,0 +1,21 @@
+var values = (prompt("Input")).split(' ');
+
+function nextNumber() {
+    return values.shift() * 1;
+}
+
+function hasNext() {
+	return values.length > 0;
+}
+
+var result = 0;
+var current = nextNumber();
+while (hasNext()) {
+	var next = nextNumber();
+	if (next > current) {
+		result++;
+	}
+	current = next;
+}
+
+console.log(result);
