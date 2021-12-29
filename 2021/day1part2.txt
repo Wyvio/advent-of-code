@@ -1,0 +1,28 @@
+var values = (prompt("Input")).split(' ');
+
+function nextNumber() {
+	var numArray = values.slice(index, index + 3);
+	var sum = 0;
+	while (numArray.length > 0) {
+		sum += numArray.shift() * 1;
+	}
+	return sum;
+}
+
+function hasNext() {
+	return index + 3 < values.length;
+}
+
+var result = 0;
+var index = 0;
+var current = nextNumber(index);
+while (hasNext()) {
+	index++;
+	var next = nextNumber(index);
+	if (next > current) {
+		result++;
+	}
+	current = next;
+}
+
+console.log(result);
